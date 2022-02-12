@@ -1,0 +1,22 @@
+version: '3'
+
+services: 
+  server: 
+    build: 
+      context: server
+    ports: 
+      - '5000:5000'
+    healthcheck:
+      test: "curl --fail -k --cert certs/server.pem --cacert certs/ca.pem https://localhost:5000 || exit 1"
+      interval: "1m"
+      timeout: "3s"
+
+  client:
+    build:
+      context: client
+    ports:
+      - '6000:6000'
+    healthcheck:
+      test: "curl --fail --silent http://localhost:6000 || exit 1"
+      interval: "1m"
+      timeout: "3s"
