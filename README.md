@@ -9,3 +9,4 @@ Consolidate repos of small python projects into one repo
  - Hashy - check for hash collisions in unique strings
  - Ordersync - developed for ecommerce-based store for shopify/quickbooks/shipping 
  - Scapy_Test - pcap capture, introspection, serialization
+ - GUI - python GUI with PyQt to query NIST CVE Database
